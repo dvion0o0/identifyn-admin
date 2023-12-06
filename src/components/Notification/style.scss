@@ -1,0 +1,16 @@
+.message-box-custom {
+  z-index: 1001;
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-box-custom .message-box-custom-inner {
+  border-radius: 16px;
+  background: #FCFCFC;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.23);
+  padding: 12px;
+}
