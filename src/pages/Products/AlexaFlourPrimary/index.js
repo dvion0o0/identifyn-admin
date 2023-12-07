@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Layout from "../../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../../components/Input'
 import AddProduct from "./AddProduct"
-
+import { AuthContext } from '../../../context/auth';
+import ItemPreviewDrawer  from '../../../components/Drawers/ItemPreviewDrawer';
 const Index = () => {
+  const {setOpenItemPreviewModal, openItemPreviewModal } =useContext(AuthContext)
   const [openAddProduct, setOpenAddProduct] = useState(false)
 
   const businessData = [
@@ -106,6 +108,7 @@ const Index = () => {
   }
 
   return (
+    <>
     <Layout>
      <HeaderWrapper>
      <div className="header-title">Products - <span className='sub-title'>Alexa Fluor™ Primary Antibodies</span> 234</div>
@@ -151,8 +154,8 @@ const Index = () => {
                   <td><span style={{fontWeight:600}}>{business?.price ? business?.price : "-"}</span></td>
                   <td style={{ cursor: "pointer" }}>
                     <span style={{display:'flex', gap:'30px', alignItems:'center', justifyContent:'flex-end'}}>
-                      <button style={{fontSize:'16px', color:'#6c6a43'}}><i class="far fa-eye"></i></button>
-                      <button style={{fontSize:'16px', color:'#6c6a43'}}><i class="far fa-pencil"></i></button>
+                      <button style={{fontSize:'16px', color:'#6c6a43'}} onClick={() => setOpenItemPreviewModal(true)}><i class="far fa-eye"></i></button>
+                      <button style={{fontSize:'16px', color:'#6c6a43'}} onClick={() => setOpenAddProduct(true)}><i class="far fa-pencil"></i></button>
                       <button style={{fontSize:'16px', color:'#6c6a43'}}><i class="far fa-trash-alt"></i></button>
                     </span>
                   </td>
@@ -163,6 +166,8 @@ const Index = () => {
         </table>
      </ContentWrapper>
     </Layout>
+        {openItemPreviewModal &&  <ItemPreviewDrawer setOpenItemPreviewModal={setOpenItemPreviewModal} setOpenAddProduct={setOpenAddProduct} />}
+    </>
      )
 }
 
