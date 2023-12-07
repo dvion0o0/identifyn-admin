@@ -86,7 +86,7 @@ line-height: 20px;
 display: flex;
 gap: 15px;
 align-items: center;
-padding: 12px 16px;
+padding: 10px 16px;
 position: relative;
 
 .angle{

@@ -419,7 +419,7 @@ h4{
 padding: 0 44px;
 display: grid;
 grid-template-columns: repeat(6, 1fr);
-gap: 30px;
+gap: 20px;
 
 .reference-wrapper{
     margin-top: 20px;
@@ -497,10 +497,10 @@ h4{
 padding: 28px 44px 0 44px;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 30px;
+gap: 20px;
 
 .image-card{
-width: 412px;
+width: 100%;
 padding: 20px 16px 16px 16px;
 flex-direction: column;
 border-radius: 16px;

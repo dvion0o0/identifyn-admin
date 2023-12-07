@@ -47,7 +47,7 @@ gap: 8px;
 
 export const ContentWrapper = styled.div`
 height: calc(100vh - 110px);
-padding: 40px 44px 0 44px;
+padding: 20px 44px 0 44px;
 overflow-y: auto;
 
 .mainTable{

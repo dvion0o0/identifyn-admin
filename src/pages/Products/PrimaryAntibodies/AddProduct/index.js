@@ -208,7 +208,7 @@ const Index = ({setOpenAddProduct}) => {
             <div className="first-container">
               <div className="reference-wrapper">
                 <h4>pH<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Select any one ph</p>
+                <p>Select any one pH</p>
                 <div className="reference-input-wrapper">
                   <button className='btn'>5.5</button>
                   <button className='btn'>5.8</button>
@@ -240,7 +240,7 @@ const Index = ({setOpenAddProduct}) => {
               <div className="reference-wrapper">
                 <h4>Cyropreservative<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Select any one Cyropreservative</p>
-                <div className="signle-input-wrapper">
+                <div className="single-input-wrapper">
                   <button className='btn'>Glycerol</button>
                   <button className='btn'>PEG</button>
                 </div>
