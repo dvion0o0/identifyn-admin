@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Layout from "../../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../../components/Input'
 import { toAbsoluteUrl } from '../../../utils/assetHelper'
+import { AuthContext } from '../../../context/auth'
 
 
 const Index = ({ setOpenProfile }) => {
+  const {setOpenAddressModal} = useContext(AuthContext)
   const [addressTab, setAddressTab] = useState("shipping")
   const [ordersTab, setOrdersTab] = useState("current");
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -141,21 +143,21 @@ const Index = ({ setOpenProfile }) => {
                   <h4>University of California, San Francisco</h4>
                   <h4 style={{ color: '#6c6a73', fontWeight: 400 }}>505 Parnassus Ave, San Francisco, CA 94143, United States</h4>
                 </div>
-                <span><i className="fas fa-eye"></i> View</span>
+                <span onClick={() => setOpenAddressModal(true)}><i className="fas fa-eye"></i> View</span>
+              </div>
+              <div className="address">
+                <div className="left-container">
+                  <h4>University of California, San Francisco <span>Primary</span></h4>
+                  <h4 style={{ color: '#6c6a73', fontWeight: 400 }}>505 Parnassus Ave, San Francisco, CA 94143, United States</h4>
+                </div>
+                <span  onClick={() => setOpenAddressModal(true)}><i className="fas fa-eye"></i> View</span>
               </div>
               <div className="address">
                 <div className="left-container">
                   <h4>University of California, San Francisco</h4>
                   <h4 style={{ color: '#6c6a73', fontWeight: 400 }}>505 Parnassus Ave, San Francisco, CA 94143, United States</h4>
                 </div>
-                <span><i className="fas fa-eye"></i> View</span>
-              </div>
-              <div className="address">
-                <div className="left-container">
-                  <h4>University of California, San Francisco</h4>
-                  <h4 style={{ color: '#6c6a73', fontWeight: 400 }}>505 Parnassus Ave, San Francisco, CA 94143, United States</h4>
-                </div>
-                <span><i className="fas fa-eye"></i> View</span>
+                <span  onClick={() => setOpenAddressModal(true)}><i className="fas fa-eye"></i> View</span>
               </div>
             </div>
           </div>

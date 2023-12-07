@@ -204,11 +204,29 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 80%;
 
     h4,h5{
+        display: flex;
+        gap: 15px;
+        align-items: center;
         font-size: 16px;
         color:#000;
         font-weight: 500;
+    }
+    span{
+        border-radius: 8px;
+        width: max-content;
+        padding: 4px 8px;
+        height: 28px;
+        background: linear-gradient(0deg, rgba(63, 27, 208, 0.12) 0%, rgba(63, 27, 208, 0.12) 100%), #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        gap: 8px;
+        cursor: pointer;
+        color:#3F1BD0;
     }
 }
 span{

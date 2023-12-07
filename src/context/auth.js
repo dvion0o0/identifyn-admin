@@ -6,6 +6,7 @@ export const AuthProvider = ({ children }) => {
   const [notification, setNotification] = useState(null);
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [openAddressModal, setOpenAddressModal] = useState(false);
 
   const login = (userData) => {
     // Perform login logic and set the user state
@@ -20,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isLoggedIn, setNotification, notification }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoggedIn, setNotification, notification, setOpenAddressModal, openAddressModal }}>
       {children}
     </AuthContext.Provider>
   );
