@@ -9,6 +9,7 @@ import Glass from '../pages/Products/Glass'
 import MountingMedium from '../pages/Products/Mounting'
 import Customers from '../pages/Customers'
 import OrderHistory from '../pages/OrderHistory'
+import TeamBio from '../pages/TeamBio'
 import AddProduct from '../pages/Products/AddProduct'
 
 export const AppRouter = () => {
@@ -26,7 +27,7 @@ export const AppRouter = () => {
                     <Route path='/products/mounting' element={<MountingMedium/>}/>
                     <Route path='/customers' element={<Customers/>}/>
                     <Route path='/order-history' element={<OrderHistory/>}/>
-                    <Route path='/team-bio' element={<PrimaryAntibodies/>}/>
+                    <Route path='/team-bio' element={<TeamBio/>}/>
                     {/* <Route path='/products/add-product' element={<AddProduct/>}/> */}
                 </Route>
             </Routes>

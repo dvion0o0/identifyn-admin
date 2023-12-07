@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react'
 import { AuthContext } from '../../context/auth'
 import Sidebar from '../Sidebar'
 import Notification from '../Notification'
-import ChangePasswordModal from '../modals/changePasswordModal'
+import AddressModal from '../modals/addressModal'
 
 const Index = ({children}) => {
   const { notification, setNotification, openAddressModal, setOpenAddressModal } = useContext(AuthContext)
@@ -26,7 +26,7 @@ useEffect(() => {
     {children}
     </main>
   </div>
- {openAddressModal && <ChangePasswordModal openAddressModal={openAddressModal} setOpenAddressModal={setOpenAddressModal}/> }
+ {openAddressModal && <AddressModal openAddressModal={openAddressModal} setOpenAddressModal={setOpenAddressModal}/> }
     </>
   )
 }
