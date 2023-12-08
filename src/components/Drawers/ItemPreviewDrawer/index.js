@@ -12,7 +12,7 @@ const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
   return (
     <>
     <DrawerWrapper>
-        <div className="small-modal-content">
+        <div className="drawer-modal-content">
             <div className="header">
                <h2>Anti-Human PAR​P1</h2>
                <div className="icons-container">

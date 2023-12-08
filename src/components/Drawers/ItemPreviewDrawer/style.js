@@ -10,13 +10,13 @@ export const DrawerWrapper = styled.div`
     background: rgba(0, 0, 0, 0.28);
     backdrop-filter: blur(2px);
     z-index: 100 !important;
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex; */
+    /* justify-content: flex-end; */
     overflow-y: auto;
 
 
-    .small-modal-content {
-        position: relative;
+    .drawer-modal-content {
+        position: absolute;
         height: max-content;
         width: 530px;
         display: flex;
@@ -27,6 +27,16 @@ export const DrawerWrapper = styled.div`
         padding: 20px 24px;
         background: #FFF;
         box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+        right: -100%;
+        top: 0;
+        animation: slide-in 0.3s forwards ease-in-out;
+
+        @keyframes slide-in {
+            100% {
+                right: 0%;
+            }
+        }
+
 
         @media screen and (max-width: 1100px) {
             width: 100vw;
