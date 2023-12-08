@@ -31,7 +31,7 @@ const Index = () => {
               <img src={toAbsoluteUrl('/media/sidebarlogo.png')} className='sidebar-logo' alt="" />
               }
                 <div className="links">
-                    <button  className={'link'} style={{color: pathname.includes('products') && 'var(--primary-color)', fontWeight: pathname.includes('products') && '700', background: !openSidebar && '#fff2e5', borderRadius: !openSidebar && '12px', justifyContent: !openSidebar && 'center'}} onClick={() => openSidebar ? setOpenDropDown(!openDropDown) : navigate('/products/primary-antibodies')}><i class="far fa-boxes"></i>{openSidebar && `Products`} {openSidebar && openDropDown ? <i class="fas fa-angle-down angle"></i> : openSidebar && <i class="fas fa-angle-up angle"></i>}</button>
+                    <button  className={'link'} style={{color: pathname.includes('products') && 'var(--primary-color)', fontWeight: pathname.includes('products') && '700', background: !openSidebar && pathname.includes('products') && '#fff2e5', borderRadius: !openSidebar && '12px', justifyContent: !openSidebar && 'center'}} onClick={() => openSidebar ? setOpenDropDown(!openDropDown) : navigate('/products/primary-antibodies')}><i class="far fa-boxes"></i>{openSidebar && `Products`} {openSidebar && openDropDown ? <i class="fas fa-angle-down angle"></i> : openSidebar && <i class="fas fa-angle-up angle"></i>}</button>
              <div className={`sub-link ${openDropDown && 'sub-link-active'}`}>
                         <NavLink to="/products/primary-antibodies" className={'link'}>Primary Antibodies</NavLink>
                         <NavLink to="/products/alexa-fluor-primary" className={'link'}>Alexa Fluor™

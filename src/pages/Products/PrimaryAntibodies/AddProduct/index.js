@@ -5,21 +5,24 @@ import Input from '../../../../components/Input'
 
 
 
-const Index = ({setOpenAddProduct}) => {
+const Index = ({setOpenAddProduct, selectedProduct, setSelectedProduct}) => {
   const [productType, setProductType] = useState('')
   const [subProductType, setSubProductType] = useState('')
   const [productNumber, setProductNumber] = useState('')
   const [productMonoclonal, setProductMonoclonal] = useState('')
   const [monoclonal, setMonoclonal] = useState('')
-  const [protienApplication, setProtienApplication] = useState([])
+  const [proteinApplication, setProteinApplication] = useState([])
 
   return (
     <Layout>
       <HeaderWrapper>
-        <div className="header-title"><span className='sub-title'>Add Product</span></div>
+        <div className="header-title"><span className='sub-title'>{selectedProduct ? 'Edit Product' : 'Add Product'}</span></div>
         <div className="header-search-container">
-          <button className='transparent' onClick={() => setOpenAddProduct(false)} >Cancel</button>
-          <button className='btn'>Add Product</button>
+          <button className='transparent' onClick={() => {
+            setOpenAddProduct(false)
+            setSelectedProduct(null)
+            }} >Cancel</button>
+          <button className='btn'>{selectedProduct ? 'Save Changes' : 'Add Product'}</button>
         </div>
       </HeaderWrapper>
       <ContentWrapper>

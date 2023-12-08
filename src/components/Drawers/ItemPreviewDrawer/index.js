@@ -5,7 +5,7 @@ import MethodologyModal from '../../modals/MethodologyModal'
 
 const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
     const [openMethodologyModal, setOpenMethodologyModal] = useState(false)
-    const [addressTab, setAddressTab] = useState("primary")
+    const [productTab, setProductTab] = useState("primary")
     const [selectedProduct, setSelectedProduct] = useState('Mouse Monoclonal')
 
 
@@ -24,9 +24,10 @@ const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
                 </div> 
             </div>
             <div className="tab-container">
-              <button style={{ borderTopLeftRadius: '12px', borderBottomLeftRadius: '12px' }} className={addressTab === "primary" && 'tab-active'} disabled >Primary Antibodies</button>
-              <button style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={addressTab === "alexaflour" && 'tab-active'}  disabled>AlexaFluor™ Primary Antibodies</button>
+              <button style={{ borderTopLeftRadius: '12px', borderBottomLeftRadius: '12px' }} className={productTab === "primary" && 'tab-active'} disabled >Primary Antibodies</button>
+              <button style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={productTab === "alexaflour" && 'tab-active'}  disabled>AlexaFluor™ Primary Antibodies</button>
             </div>
+           {productTab === 'alexaflour' &&  <button className='dye-btn' disabled >Dye: 405</button> }
             <div className="items-container">
             <button style={{ borderTopLeftRadius: '12px', borderBottomLeftRadius: '12px' }} className={selectedProduct === "Mouse Monoclonal" && 'tab-active'} disabled >Mouse Monoclonal</button>
               <button style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={selectedProduct === "alexaflour" && 'tab-active'}  disabled>Mouse Recombitant Monoclonal</button> 

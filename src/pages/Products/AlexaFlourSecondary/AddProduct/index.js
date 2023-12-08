@@ -192,13 +192,13 @@ const Index = ({setOpenAddProduct}) => {
                 <Input type="text" placeholder='Type Here'/>
                 </div>
               </div>
-              <div className="reference-wrapper">
+              {/* <div className="reference-wrapper">
                 <h4>Laser​<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Laser</p>
                 <div className="single-input-wrapper">
                  <Input type="text" placeholder='Type Here'/>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           </DyeInformation>

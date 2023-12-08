@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Layout from "../../../../components/layout"
-import { HeaderWrapper, ContentWrapper, ProtienInformation, ProductInformation, PriceInformation, ProductFormulation, ImageInformation } from './style'
+import { HeaderWrapper, ContentWrapper, ProtienInformation, ProductInformation, DyeInformation, PriceInformation, ProductFormulation, ImageInformation } from './style'
 import Input from '../../../../components/Input'
 
 
@@ -198,6 +198,55 @@ const Index = ({setOpenAddProduct}) => {
                 </div>
               </div>
         </ProductInformation>
+        {/* dye characterstics */}
+        <DyeInformation>
+          <div className="header">
+            <h4>Product Formulation</h4>
+          </div>
+          <div className="content" style={{gridTemplateColumns:'1fr 1fr 1fr'}}>
+          <div className="first-container">
+              <div className="reference-wrapper">
+                <h4>Excitation Wavelength​​<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <p>Enter Excitation Wavelength</p>
+                <div className="single-input-wrapper">
+                 <Input type="text" placeholder='Type Here'/>
+                </div>
+              </div>
+              <div className="reference-wrapper">
+                <h4>Molecular Weight​​<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <p>Enter Molecular Weight</p>
+                <div className="single-input-wrapper">
+                 <Input type="text" placeholder='Type Here'/>
+                </div>
+              </div>
+            </div>
+            <div className="first-container">
+              <div className="reference-wrapper">
+                <h4>Emission Wavelength<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <p>Enter Emission Wavelength</p>
+                <div className="single-input-wrapper">
+                <Input type="text" placeholder='Type Here'/>
+                </div>
+              </div>
+              <div className="reference-wrapper">
+                <h4>Emission Color<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <p>Enter Emission Color</p>
+                <div className="single-input-wrapper">
+                 <Input type="text" placeholder='Type Here'/>
+                </div>
+              </div>
+            </div>
+            <div className="first-container">
+              <div className="reference-wrapper">
+                <h4>Extinction Coefficient<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <p>Enter Extinction Coefficient</p>
+                <div className="single-input-wrapper">
+                <Input type="text" placeholder='Type Here'/>
+                </div>
+              </div>
+            </div>
+          </div>
+          </DyeInformation>
         {/* product formulation */}
         <ProductFormulation>
           <div className="header">

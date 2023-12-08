@@ -61,6 +61,27 @@ color: var(--primary-color);
 
 }
 
+.dye-btn{
+display: block;
+  background-color:#EDEDED;
+  color: #000;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  border-radius: 12px;
+  border: 1px solid #F1EEFC;
+    background: #FCFCFC;
+    backdrop-filter: blur(19px);
+}
+
+
 .tab-container, .items-container{
         width: 100%;
         height: 40px;

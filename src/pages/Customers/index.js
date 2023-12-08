@@ -3,6 +3,7 @@ import Layout from "../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../components/Input'
 import CustomerProfile from './CustomerProfile'
+import Pagination from '../../components/pagination';
 
 
 const Index = () => {
@@ -164,6 +165,7 @@ const Index = () => {
             })}
           </tbody>
         </table>
+        <Pagination />
      </ContentWrapper>
     </Layout>
      )

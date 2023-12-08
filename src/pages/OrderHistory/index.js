@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import Layout from "../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../components/Input'
+import Pagination from '../../components/pagination';
 
 
 const Index = () => {
   const [tab, setTab] = useState("Current")
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(3);
 
   const businessData = [
     {
@@ -181,7 +182,7 @@ const Index = () => {
                             >
                               <span
                                 style={{
-                                  background: "#fff",
+                                  background: current > 1 ? "#3f1bd0" : current === 1 ? "#fff" : "#9a9a9a",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -216,7 +217,7 @@ const Index = () => {
                             >
                               <span
                                 style={{
-                                  background: current >= 1 ? "#fff" : "inherit",
+                                  background: current >= 2 ? "inherit" : current == 1 ? "#fff" : "inherit",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -251,7 +252,7 @@ const Index = () => {
                             >
                               <span
                                 style={{
-                                  background: current >= 2 ? "#fff" : "inherit",
+                                  background: current >= 3 ? "inhertit" : current == 2 ?  "#fff" : 'inherit',
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -266,7 +267,7 @@ const Index = () => {
                               style={{
                                 height: "2px",
                                 width: "33%",
-                                backgroundColor: current >= 2 ? "#3f1bd0" : "#9a9a9a",
+                                backgroundColor: current >= 3 ? "#3f1bd0" : "#9a9a9a",
                               }}
                               className="progress-connector-line"
                             ></div>
@@ -276,7 +277,7 @@ const Index = () => {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                backgroundColor: current >= 2 ? "#3f1bd0" : "#9a9a9a",
+                                backgroundColor: current >= 3 ? "#3f1bd0" : "#9a9a9a",
                                 color: "#ffffff",
                                 width: "20px",
                                 height: "20px",
@@ -286,7 +287,7 @@ const Index = () => {
                             >
                               <span
                                 style={{
-                                  background: current >= 2 ? "#fff" : "inherit",
+                                  background: current >= 3 ? "#fff" : "inherit",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -407,6 +408,7 @@ const Index = () => {
             })}
           </tbody>
         </table>
+        <Pagination />
       </ContentWrapper>
     </Layout>
   )

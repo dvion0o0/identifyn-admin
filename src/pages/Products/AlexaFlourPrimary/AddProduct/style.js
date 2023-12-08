@@ -603,3 +603,82 @@ color: #6c6a73;
 
 }
 `
+
+
+export const DyeInformation = styled.div`
+margin-bottom: 44px;
+.header{
+    height: 48px;
+    width: 100%;
+    background:#F8F7FE;
+    display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 44px;
+
+h4{
+    font-size:16px;
+    color: var(--primary-color);
+}
+}
+
+.content{
+padding: 0 44px;
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 30px;
+
+.reference-wrapper{
+    margin-top: 20px;
+
+    h4{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size: 12px;
+        color: #6C6A73;
+    }
+
+    .reference-input-wrapper, .single-input-wrapper{
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+
+        input[type="text"]:focus{
+            border: 2px solid var(--primary-color);
+        }
+    }
+
+    .single-input-wrapper{
+        grid-template-columns: 1fr;
+ 
+    }
+
+    .multiple-input-wrapper{
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap:12px;
+
+    }
+
+    .btn{
+            background: transparent;
+            color: #000;
+            border: 1px solid #F1EEFC;
+            width: 100%;
+            font-weight: 400;
+        }
+
+        .active-btn{
+            background: var(--primary-color);
+            color:#fff;
+        }
+
+}
+
+}
+`

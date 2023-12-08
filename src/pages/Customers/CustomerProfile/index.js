@@ -11,7 +11,7 @@ const Index = ({ setOpenProfile }) => {
   const [addressTab, setAddressTab] = useState("shipping")
   const [ordersTab, setOrdersTab] = useState("current");
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(2);
 
   const businessData = [
     {
@@ -238,7 +238,7 @@ const Index = ({ setOpenProfile }) => {
                             >
                               <span
                                 style={{
-                                  background: "#fff",
+                                  background: current > 1 ? "#3f1bd0" : current === 1 ? "#fff" : "#9a9a9a",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -273,7 +273,7 @@ const Index = ({ setOpenProfile }) => {
                             >
                               <span
                                 style={{
-                                  background: current >= 1 ? "#fff" : "inherit",
+                                  background: current >= 2 ? "inherit" : current == 1 ? "#fff" : "inherit",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -308,7 +308,7 @@ const Index = ({ setOpenProfile }) => {
                             >
                               <span
                                 style={{
-                                  background: current >= 2 ? "#fff" : "inherit",
+                                  background: current >= 3 ? "inhertit" : current == 2 ?  "#fff" : 'inherit',
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",
@@ -323,7 +323,7 @@ const Index = ({ setOpenProfile }) => {
                               style={{
                                 height: "2px",
                                 width: "33%",
-                                backgroundColor: current >= 2 ? "#3f1bd0" : "#9a9a9a",
+                                backgroundColor: current >= 3 ? "#3f1bd0" : "#9a9a9a",
                               }}
                               className="progress-connector-line"
                             ></div>
@@ -333,7 +333,7 @@ const Index = ({ setOpenProfile }) => {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                backgroundColor: current >= 2 ? "#3f1bd0" : "#9a9a9a",
+                                backgroundColor: current >= 3 ? "#3f1bd0" : "#9a9a9a",
                                 color: "#ffffff",
                                 width: "20px",
                                 height: "20px",
@@ -343,7 +343,7 @@ const Index = ({ setOpenProfile }) => {
                             >
                               <span
                                 style={{
-                                  background: current >= 2 ? "#fff" : "inherit",
+                                  background: current >= 3 ? "#fff" : "inherit",
                                   width: "8px",
                                   height: "8px",
                                   borderRadius: "50%",

@@ -5,6 +5,7 @@ import Input from '../../../components/Input'
 import AddProduct from "./AddProduct"
 import { AuthContext } from '../../../context/auth';
 import ItemPreviewDrawer  from '../../../components/Drawers/ItemPreviewDrawer';
+import Pagination from '../../../components/pagination';
 const Index = () => {
   const {setOpenItemPreviewModal, openItemPreviewModal } =useContext(AuthContext)
   const [openAddProduct, setOpenAddProduct] = useState(false)
@@ -164,6 +165,7 @@ const Index = () => {
             })}
           </tbody>
         </table>
+        <Pagination />
      </ContentWrapper>
     </Layout>
         {openItemPreviewModal &&  <ItemPreviewDrawer setOpenItemPreviewModal={setOpenItemPreviewModal} setOpenAddProduct={setOpenAddProduct} />}
