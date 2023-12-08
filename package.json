@@ -1,6 +1,6 @@
 {
   "name": "identifyn-admin",
-  "homepage": "identifynadmin.netlify.app",
+  "homepage": "admin-identifyn.netlify.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
