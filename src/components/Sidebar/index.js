@@ -44,7 +44,7 @@ const Index = () => {
                     </div>
                     <NavLink to="/customers" className={'link'} style={{justifyContent: !openSidebar && 'center'}}><i class="far fa-users"></i> {openSidebar && `Customers`}</NavLink>
                     <NavLink to="/order-history" className={'link'} style={{justifyContent: !openSidebar && 'center'}}><i class="far fa-clipboard-check"></i>{openSidebar && `Order History`}</NavLink>
-                    <NavLink to="/team-bio" className={'link'} style={{justifyContent: !openSidebar && 'center'}}><i class="far fa-user-md"></i>{openSidebar && `Team Bios`}</NavLink>
+                    <NavLink to="/team-bio" className={'link'} style={{justifyContent: !openSidebar && 'center'}}><i class="far fa-id-badge"></i>{openSidebar && `Team Bios`}</NavLink>
                 </div>
             </div>
             <div className="profile-wrapper">
