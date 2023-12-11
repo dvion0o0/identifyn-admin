@@ -11,6 +11,7 @@ import Customers from '../pages/Customers'
 import OrderHistory from '../pages/OrderHistory'
 import TeamBio from '../pages/TeamBio'
 import AddProduct from '../pages/Products/AddProduct'
+import Error from '../pages/Error'
 
 export const AppRouter = () => {
 
@@ -30,6 +31,7 @@ export const AppRouter = () => {
                     <Route path='/team-bio' element={<TeamBio/>}/>
                     {/* <Route path='/products/add-product' element={<AddProduct/>}/> */}
                 </Route>
+                <Route path='*' element={<Error/>}/>
             </Routes>
         </>
     )
