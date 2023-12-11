@@ -126,7 +126,7 @@ const Index = () => {
               <th>Target <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
               <th>Product Name <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
               <th>Host Species <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
-              <th>Alexa Flour <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
+              <th>Alexa Fluor™ <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
               <th>Price</th>
               <th>Action</th>
             </tr>

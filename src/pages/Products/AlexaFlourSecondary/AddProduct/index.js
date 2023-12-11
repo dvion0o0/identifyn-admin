@@ -122,7 +122,7 @@ const Index = ({setOpenAddProduct}) => {
             </div>
           </div>
           <div className="reference-wrapper" style={{padding:'0 44px'}}>
-                <h4>Dyes<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <h4>Dyes </h4>
                 <p>Select Dyes</p>
                 <div className="multiple-input-wrapper">
                   <button className='btn'>Alexa 405</button>
@@ -149,7 +149,7 @@ const Index = ({setOpenAddProduct}) => {
 {/* dye characterstics */}
           <DyeInformation>
           <div className="header">
-            <h4>Product Formulation</h4>
+            <h4>Dye Characteristics</h4>
           </div>
           <div className="content" style={{gridTemplateColumns:'1fr 1fr 1fr'}}>
           <div className="first-container">

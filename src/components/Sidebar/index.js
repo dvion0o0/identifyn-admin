@@ -52,7 +52,7 @@ const Index = () => {
                 <button className='profile' style={{ color: '#DC1E00', fontWeight: '500', fontSize: '14px', justifyContent: !openSidebar && 'center'}}
                     onClick={logout}
                 >
-                    <i class="fas fa-sign-out-alt" style={{ fontSize: '22px' }}></i> {openSidebar && 'Logout'}
+                    <i class="fas fa-sign-out-alt" style={{ fontSize: '22px' }}></i> {openSidebar && 'Sign Out'}
                 </button>
             </div>
         </SidebarContainer>
