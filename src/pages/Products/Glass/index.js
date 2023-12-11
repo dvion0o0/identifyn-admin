@@ -159,7 +159,7 @@ const Index = () => {
         </table>
         <Pagination />
      </ContentWrapper>
-     {openItemPreviewModal &&  <ItemPreviewDrawer setOpenItemPreviewModal={setOpenItemPreviewModal} setOpenAddProduct={setOpenAddProduct} />}
+     {/* {openItemPreviewModal &&  <ItemPreviewDrawer setOpenItemPreviewModal={setOpenItemPreviewModal} setOpenAddProduct={setOpenAddProduct} />} */}
     </Layout>
     </>
      )
