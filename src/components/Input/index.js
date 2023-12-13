@@ -15,7 +15,8 @@ const Index = ({
   name,
   otherText,
   isDisabled=false,
-  defaultValue=''
+  defaultValue='',
+  checked=false
 }) => {
   const [showPlaceHolder, setShowPlaceHolder] = useState(required)
   const [showPassword, setShowPassword] = useState(false)
@@ -48,7 +49,7 @@ const Index = ({
       </div>
 }
     {radio &&  <label class="radio-containers" style={style} className={className}>
-        <input type="radio" name={name} value={value} onChange={onChange} />
+        <input type="radio" name={name} value={value} onChange={onChange} checked={checked} />
         <span class="checkmark"></span>
         <span>{value}</span>
       </label>

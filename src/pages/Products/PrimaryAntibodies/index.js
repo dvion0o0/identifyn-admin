@@ -3,7 +3,7 @@ import Layout from "../../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../../components/Input';
 import {useNavigate} from "react-router-dom"
-import AddProduct from "./AddProduct"
+import AddProduct from "../AddProduct"
 import ItemPreviewDrawer  from '../../../components/Drawers/ItemPreviewDrawer';
 import { AuthContext } from '../../../context/auth';
 import Pagination from '../../../components/pagination';
@@ -108,7 +108,7 @@ const Index = () => {
   
 
   if(openAddProduct) {
-    return <AddProduct setOpenAddProduct={setOpenAddProduct} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
+    return <AddProduct setOpenAddProduct={setOpenAddProduct} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} type={'PA - Primary Antibody'} />
   }
 
   return (

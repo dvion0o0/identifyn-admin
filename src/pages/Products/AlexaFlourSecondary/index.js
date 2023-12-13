@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import Layout from "../../../components/layout"
 import { HeaderWrapper, ContentWrapper } from './style'
 import Input from '../../../components/Input'
-import AddProduct from "./AddProduct"
+import AddProduct from "../AddProduct"
 import { AuthContext } from '../../../context/auth';
 import ItemPreviewDrawer  from '../../../components/Drawers/ItemPreviewDrawer';
 import Pagination from '../../../components/pagination';
@@ -10,6 +10,7 @@ import Pagination from '../../../components/pagination';
 const Index = () => {
   const {setOpenItemPreviewModal, openItemPreviewModal } =useContext(AuthContext)
   const [openAddProduct, setOpenAddProduct] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState(null)
 
   const businessData = [
     {
@@ -105,7 +106,7 @@ const Index = () => {
 
 
   if(openAddProduct) {
-    return <AddProduct setOpenAddProduct={setOpenAddProduct} />
+    return <AddProduct setOpenAddProduct={setOpenAddProduct} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} type={'SA - Secondary Antibody'}  />
   }
 
 
@@ -159,7 +160,10 @@ const Index = () => {
                   <td style={{ cursor: "pointer" }}>
                     <span style={{display:'flex', gap:'30px', alignItems:'center', justifyContent:'flex-end'}}>
                       <button style={{fontSize:'16px', color:'#6c6a43'}} onClick={() => setOpenItemPreviewModal(true)}><i class="far fa-eye"></i></button>
-                      <button style={{fontSize:'16px', color:'#6c6a43'}} onClick={() => setOpenAddProduct(true)}><i class="far fa-pencil"></i></button>
+                      <button style={{fontSize:'16px', color:'#6c6a43'}} onClick={() => {
+                        setOpenAddProduct(true)
+                        setSelectedProduct(business)
+                        }}><i class="far fa-pencil"></i></button>
                       <button style={{fontSize:'16px', color:'#6c6a43'}}><i class="far fa-trash-alt"></i></button>
                     </span>
                   </td>
