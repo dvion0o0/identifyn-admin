@@ -31,41 +31,16 @@ gap: 8px;
     display: flex;
     align-items: center;
     gap: 25px;
+    justify-content: flex-end;
 
-    .tab-container{
-        width: 300px;
+    .btn{
+        width: 180px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #fff;
-        border-radius: 12px;
-
-button{
-    display: block;
-  background-color:#fff;
-  color: #000;
-  text-align: center;
-  padding: 1rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  height: 40px;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    }
-
-    .tab-active{
-        background-color: var(--primary-color);
-        color: #fff;
-        border-radius: 12px;
-    }
-
     }
 }
-
-
 
 `
 
@@ -73,5 +48,78 @@ export const ContentWrapper = styled.div`
 height: calc(100vh - 110px);
 padding: 20px 44px 0 44px;
 overflow-y: auto;
+
+
+.teams-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .team-type{
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px;
+color: #1E1E1E;
+margin-bottom: 12px;
+  }
+
+  .team-members{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .team-member{
+border-radius: 20px;
+background: linear-gradient(0deg, #F5F5F5 0%, #F5F5F5 100%), #FFF;
+display: flex;
+padding: 16px 20px;
+align-items: center;
+justify-content: space-between;
+
+.left-container, .member-info{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.member-img{
+    width: 80px;
+    height: 80px;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.member-name{
+  font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+color:#1E1E1E;
+}
+
+
+.member-position{
+  font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+text-transform: uppercase;
+color: #6c6a73;
+}
+
+  }
+
+  }
+
+
+
+
+
+
+}
 
 `

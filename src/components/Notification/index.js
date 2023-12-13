@@ -22,6 +22,7 @@ const Notification= ({ message, subMessage, onClick, type }) => {
               background:
                 type === 'green' ? '#33C25E'
                   : type === 'red' ? '#DC1E00'
+                  : type === 'delete' ? '#DC1E00'
                   : type === 'orange' ? '#D74C10'
                     : '#33C25E',
               borderRadius: '12px',
@@ -33,6 +34,9 @@ const Notification= ({ message, subMessage, onClick, type }) => {
             )
               : type === 'red' ? (
                 <i className='fas fa-info-circle' style={{ fontSize: '20px' }}></i>
+              )
+              : type === 'delete' ? (
+                <i className='fas fa-trash-alt' style={{ fontSize: '20px' }}></i>
               )
                 : (
                   <i className='fas fa-check'></i>
@@ -70,7 +74,7 @@ const Notification= ({ message, subMessage, onClick, type }) => {
             }}
             onClick={onClick}
           >
-            X
+            <i className='fas fa-times'></i>
           </button>
         </div>
       </div>

@@ -14,7 +14,8 @@ const Index = ({
   radio=false,
   name,
   otherText,
-  isDisabled=false
+  isDisabled=false,
+  defaultValue=''
 }) => {
   const [showPlaceHolder, setShowPlaceHolder] = useState(required)
   const [showPassword, setShowPassword] = useState(false)
@@ -34,7 +35,7 @@ const Index = ({
           <span style={{ color: 'rgba(220, 30, 0, 1)' }}> *</span>
         </div>
         }
-        <input type={showPassword ? 'text' : type} value={value} placeholder={placeholder} disabled={isDisabled} className={className} onChange={onChange} style={style} autoComplete='off' readOnly onBlur={() => !value && required ? setShowPlaceHolder(true) : setShowPlaceHolder(false)} onFocus={(e) => {
+        <input type={showPassword ? 'text' : type} value={value} placeholder={placeholder} disabled={isDisabled} className={className} onChange={onChange} style={style} defaultValue={defaultValue} autoComplete='off' readOnly onBlur={() => !value && required ? setShowPlaceHolder(true) : setShowPlaceHolder(false)} onFocus={(e) => {
           e.target.readOnly = false
         }}
           onTouchStart={(e) => {
