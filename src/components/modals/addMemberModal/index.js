@@ -3,7 +3,7 @@ import "./style.scss"
 import { AuthContext } from "../../../context/auth";
 import NewMemberModal from "./newMemberModal"
 
-const Index = ({setOpenAddMemberModal, openAddMemberModal, selectedMember, setSelectedMember}) => {
+const Index = ({setOpenAddMemberModal, openAddMemberModal, selectedMember, setSelectedMember, setTeamsData, teamsData}) => {
   const [role, setRole] = useState('')
 
 
@@ -21,7 +21,7 @@ const reset = () => {
 
 
 if(role){
-  return <NewMemberModal setOpenAddMemberModal={setOpenAddMemberModal} openAddMemberModal={openAddMemberModal} role={role} selectedMember={selectedMember} reset={reset} />
+  return <NewMemberModal setOpenAddMemberModal={setOpenAddMemberModal} openAddMemberModal={openAddMemberModal} role={role} selectedMember={selectedMember} reset={reset} setTeamsData={setTeamsData} teamsData={teamsData} />
 }
 
   return (
@@ -35,7 +35,7 @@ if(role){
           <div className="items-container">
             <button onClick={() => setRole('Leadership')} style={{ borderTopLeftRadius: '12px', borderBottomLeftRadius: '12px' }} className={role === "Leadership" && 'tab-active'} >Leadership</button>
               <button onClick={() => setRole('Team')} style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={role === "Team" && 'tab-active'}>Team</button> 
-              <button onClick={() => setRole('Advisor')} style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={role === "Advisor" && 'tab-active'}>Advisor</button> 
+              <button onClick={() => setRole('Advisors')} style={{ borderTopRightRadius: '12px', borderBottomRightRadius: '12px' }} className={role === "Advisors" && 'tab-active'}>Advisor</button> 
             </div>
           <button className='btn transparent' onClick={() => {
             setOpenAddMemberModal(false)

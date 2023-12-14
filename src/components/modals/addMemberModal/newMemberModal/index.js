@@ -6,12 +6,16 @@ import { AuthContext } from '../../../../context/auth';
 import PhotoShapemodal from './photoShapeModal';
 import DeleteModal from '../../DeleteModal';
 
-const Index = ({ setOpenAddMemberModal, openAddMemberModal, role, selectedMember, reset }) => {
+const Index = ({ setOpenAddMemberModal, openAddMemberModal, role, selectedMember, reset, setTeamsData, teamsData }) => {
   const {setNotification} = useContext(AuthContext)
   const [photoShapeModal, setPhotoShapeModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState('');
   const [selectedPhotoShape, setSelectedPhotoShape] = useState('');
+  const [name, setName] = useState('')
+  const [position, setPosition] = useState('')
+  const [position2, setPosition2] = useState('')
+
 
 const onUpload = (e) => {
   const file = e.target.files[0]
@@ -65,12 +69,12 @@ if(deleteModal){
           </div>
           <div className="input-container">
             <label htmlFor="name">Name <span>*</span></label>
-            <Input type='text' placeholder='Name' defaultValue={selectedMember?.name} />
+            <Input type='text' placeholder='Name' defaultValue={selectedMember?.name} onChange={e => setName(e.target.value)} />
           </div>
           <div style={{ display: 'flex', gap: '24px' }}>
             <div className="input-container">
               <label htmlFor="position">Position 1 <span>*</span></label>
-              <Input type='text' placeholder='Position 1' defaultValue={selectedMember?.position} />
+              <Input type='text' placeholder='Position 1' defaultValue={selectedMember?.position} onChange={e => setPosition(e.target.value)} />
             </div>
             <div className="input-container">
               <label htmlFor="position2">Position 2 </label>
@@ -86,7 +90,9 @@ if(deleteModal){
           ></textarea>
           </div>
         </div>
-        <button className='btn add-btn' onClick={() => {
+        <button className='btn add-btn'
+        disabled={!name || !position}
+        onClick={() => {
           if(selectedMember){
             setNotification({
               message: "Changes Successfully Saved!",
@@ -97,6 +103,25 @@ if(deleteModal){
               message: "New Member Succesfully Added",
               type: "add"
             })
+            const newMember = {
+              id:Math.floor(Math.random() * 100),
+              name:name,
+              position:position,
+              position2:position2,
+              img:selectedPhoto,
+              shapeType:selectedPhotoShape,
+            }
+
+            setTeamsData(teamsData.map((item) => {
+              if(item.type === role){
+                return {
+                  ...item,
+                  teams: [...item.teams, newMember]
+                }
+              }
+              return item
+            }))
+
           }
           setOpenAddMemberModal(false)
           reset()

@@ -20,7 +20,7 @@ const Index = ({ setPhotoShapeModal, setSelectedPhotoShape, selectedPhotoShape, 
         <h2>Select Photo Shape</h2>
           <div className="shapes-container">
             {new Array(12).fill(1).map((_, index) => (
-              <Shapes key={index} shapeType={index + 1} style={{ clipPath: `url(#svgPath-${index + 1})`, cursor:'pointer', backgroundImage: `url(${selectedPhoto})` }}
+              <Shapes key={index} shapeType={index + 1} style={{ clipPath: `url(#svgPath-${index + 1}-text)`, cursor:'pointer', backgroundImage: `url(${selectedPhoto})` }}
                 onClick={() => {
                   setSelectedPhotoShape(index + 1)
                   setPhotoShapeModal(false)
