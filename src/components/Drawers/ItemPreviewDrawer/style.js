@@ -308,4 +308,12 @@ gap: 16px;
 
     }
 
+
+ .react-tooltip {
+    background: #fff;
+    border-radius: 12px;
+box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.23);
+
+ }   
+
 `

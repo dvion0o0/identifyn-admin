@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { DrawerWrapper } from './style'
 import {toAbsoluteUrl} from '../../../utils/assetHelper'
 import MethodologyModal from '../../modals/MethodologyModal'
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
     const [openMethodologyModal, setOpenMethodologyModal] = useState(false)
@@ -58,11 +59,11 @@ const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
                         <h4>6.6</h4>
                         <h4>-80°C</h4>
                         <div className="application-container">
-                        <span onClick={() => setOpenMethodologyModal(true)}>WB</span>
-                        <span onClick={() => setOpenMethodologyModal(true)}>FIA</span>
-                        <span onClick={() => setOpenMethodologyModal(true)}>IF</span>
-                        <span onClick={() => setOpenMethodologyModal(true)}>SRM</span>
-                        <span onClick={() => setOpenMethodologyModal(true)}>STORM</span>
+                        <span onClick={() => setOpenMethodologyModal(true)} data-tooltip-id="applications" data-tooltip-content={"Wester Blot"}>WB</span>
+                        <span onClick={() => setOpenMethodologyModal(true)} data-tooltip-id="applications" data-tooltip-content={"FIA"} >FIA</span>
+                        <span onClick={() => setOpenMethodologyModal(true)} data-tooltip-id="applications" data-tooltip-content={"IF"}>IF</span>
+                        <span onClick={() => setOpenMethodologyModal(true)} data-tooltip-id="applications" data-tooltip-content={"SRM"}>SRM</span>
+                        <span onClick={() => setOpenMethodologyModal(true)} data-tooltip-id="applications" data-tooltip-content={"STORM"}>STORM</span>
                         </div>
                         <h4>$99.00</h4>
                     </div>
@@ -98,6 +99,11 @@ const Index = ({setOpenItemPreviewModal, setOpenAddProduct}) => {
                 </div>
             </div>
         </div>
+    <ReactTooltip
+        id="applications"
+        place="top"
+        variant="light"
+      />
     </DrawerWrapper>
     {openMethodologyModal && <MethodologyModal setOpenMethodologyModal={setOpenMethodologyModal} /> }
     </>
