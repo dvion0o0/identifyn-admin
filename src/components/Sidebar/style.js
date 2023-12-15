@@ -89,6 +89,13 @@ align-items: center;
 padding: 10px 16px;
 position: relative;
 
+&:hover{
+    color: var(--primary-color);
+    font-weight: 700;
+    background-color: #fff2e5;
+    border-radius: 10px;
+}
+
 .angle{
     position: absolute;
     right: 10px;

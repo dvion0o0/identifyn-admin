@@ -258,12 +258,12 @@ span{
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #fff;
+        background: #EDEDED;
         border-radius: 12px;
 
 button{
     display: block;
-  background-color:#fff;
+  background-color:#EDEDED;
   color: #000;
   text-align: center;
   padding: 1rem 1.2rem;
