@@ -5,7 +5,7 @@ import Input from '../../../components/Input'
 
 
 
-const Index = ({setOpenAddProduct, type}) => {
+const Index = ({ setOpenAddProduct, type }) => {
   const [productType, setProductType] = useState(type)
   const [subProductType, setSubProductType] = useState('')
   const [productNumber, setProductNumber] = useState('')
@@ -33,7 +33,7 @@ const Index = ({setOpenAddProduct, type}) => {
                   {subProductType === 'PA-MM - Mouse Monoclonal' && <Input type='text' placeholder={'000001'} />}
                 </div>
                 <div className="radio-wrapper">
-                  <Input checked={subProductType === 'PA-MR - Mouse Recombinant'}  radio value="PA-MR - Mouse Recombinant" name="subProductType" onChange={(e) => setSubProductType(e.target.value)} className={productType === 'PA-MR - Mouse Recombinant' ? 'active-radio radio-containers' : 'radio-containers'} />
+                  <Input checked={subProductType === 'PA-MR - Mouse Recombinant'} radio value="PA-MR - Mouse Recombinant" name="subProductType" onChange={(e) => setSubProductType(e.target.value)} className={productType === 'PA-MR - Mouse Recombinant' ? 'active-radio radio-containers' : 'radio-containers'} />
                   {subProductType === 'PA-MR - Mouse Recombinant' && <Input type='text' placeholder={'000001'} />}
                 </div>
                 <div className="radio-wrapper">
@@ -86,50 +86,50 @@ const Index = ({setOpenAddProduct, type}) => {
             </div>
           </div>
         </div>
-    {productType !== 'SA - Secondary Antibody' && 
-      <ProtienInformation>
-          <div className="header">
-            <h4>Protein Information</h4>
-          </div>
-          <div className="content">
-            <div className="first-container">
-              <div className="reference-wrapper">
-                <h4>Protein Name<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Human prefix for Protein name, Write protein name after human</p>
-                <div className="single-input-wrapper">
-                  <Input type='text' placeholder={'Enter Name'} style={{ marginTop: '10px', paddingLeft: '80px' }} otherText={'Human'} />
+        {productType !== 'SA - Secondary Antibody' &&
+          <ProtienInformation>
+            <div className="header">
+              <h4>Protein Information</h4>
+            </div>
+            <div className="content">
+              <div className="first-container">
+                <div className="reference-wrapper">
+                  <h4>Protein Name<span style={{ color: '#DC1E00' }}>*</span></h4>
+                  <p>Human prefix for Protein name, Write protein name after human</p>
+                  <div className="single-input-wrapper">
+                    <Input type='text' placeholder={'Enter Name'} style={{ marginTop: '10px', paddingLeft: '80px' }} otherText={'Human'} />
+                  </div>
+                </div>
+                <div className="reference-wrapper">
+                  <h4>Protein Description<span style={{ color: '#DC1E00' }}>*</span></h4>
+                  <p>Write description, 500 Characters​</p>
+                  <div className="single-input-wrapper">
+                    <textarea
+                      style={{ resize: "none", borderRadius: "8px" }}
+                      placeholder='Write Product Description'
+                    ></textarea>
+                  </div>
                 </div>
               </div>
-              <div className="reference-wrapper">
-                <h4>Protein Description<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Write description, 500 Characters​</p>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Write Product Description'
-                  ></textarea>
+              <div className="second-container">
+                <div className="reference-wrapper">
+                  <h4>Reference<span style={{ color: '#DC1E00' }}>*</span></h4>
+                  <p>Add reference links</p>
+                  <div className="reference-input-wrapper">
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                    <Input type='text' placeholder={'Enter Link'} />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="second-container">
-              <div className="reference-wrapper">
-                <h4>Reference<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Add reference links</p>
-                <div className="reference-input-wrapper">
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                  <Input type='text' placeholder={'Enter Link'} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </ProtienInformation>
-          }
+          </ProtienInformation>
+        }
         <ProductInformation>
           <div className="header">
             <h4>Product Information</h4>
@@ -143,111 +143,128 @@ const Index = ({setOpenAddProduct, type}) => {
                   <Input type='text' placeholder={'Enter Name'} value={'Mouse Monoclonal Anti-Human PARP1'} isDisabled />
                 </div>
               </div>
-         {productType !== "SA - Secondary Antibody" &&   
-           <div className="reference-wrapper">
-                <h4>Immunogen <span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Variant of the protein​</p>
-                <div className="single-input-wrapper">
-                  <Input type='text' placeholder={'Type Here'} />
+              {productType !== "SA - Secondary Antibody" &&
+                <div className="reference-wrapper">
+                  <h4>Immunogen <span style={{ color: '#DC1E00' }}>*</span></h4>
+                  <p>Variant of the protein (displays on <span style={{fontWeight:'600'}}>coA only</span>)​</p>
+                  <div className="single-input-wrapper">
+                    <Input type='text' placeholder={'Type Here'} />
+                  </div>
                 </div>
-              </div>
-          }
-            </div>
-      {productType !== 'SA - Secondary Antibody' && 
-           <div className="second-container">
-              <div className="reference-wrapper">
-                <p>Select any one option from above</p>
-                <div className="multiple-input-wrapper">
-                  <button className={`btn ${productMonoclonal === 'Mouse Monoclonal' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Mouse Monoclonal')}>Mouse Monoclonal</button>
-                  <button className={`btn ${productMonoclonal === 'Rabbit Recombinant Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rabbit Recombinant Monoclonal​')}>Rabbit Recombinant Monoclonal​</button>
-                  <button className={`btn ${productMonoclonal === 'Rabbit Polyclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rabbit Polyclonal​')}>Rabbit Polyclonal​</button>
-                  <button className={`btn ${productMonoclonal === 'Rat Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rat Monoclonal​')}>Rat Monoclonal​</button>
-                  <button className={`btn ${productMonoclonal === 'Mouse Recombinant Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Mouse Recombinant Monoclonal​')}>Mouse Recombinant Monoclonal​</button>
-                </div>
-              </div>
-              {productMonoclonal && <div className="reference-wrapper">
-                <p>Select any one {productMonoclonal}</p>
-                <div className="multiple-input-wrapper">
-                  <button className={`btn ${monoclonal === 'IgG1' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG1')}>IgG1</button>
-                  <button className={`btn ${monoclonal === 'IgG2a' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2a')}>IgG2a</button>
-                  <button className={`btn ${monoclonal === 'IgG2b' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2b')}>IgG2b</button>
-                  <button className={`btn ${monoclonal === 'IgG2c' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2c')}>IgG2c</button>
-                  <button className={`btn ${monoclonal === 'IgG3' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG3')}>IgG3</button>
-                </div>
-              </div>
               }
             </div>
-}
-{productType === 'SA - Secondary Antibody' && 
-        <div className="second-container">
-              <div className="reference-wrapper" style={{padding:'35px 0'}}>
-                <p>Host</p>
-                <div className="multiple-input-wrapper">
-                  <button className={`btn`}>Goat</button>
-                  <button className={`btn`} >Donkey​</button>
+            {productType !== 'SA - Secondary Antibody' &&
+              <div className="second-container">
+                <div className="reference-wrapper">
+                  <p>Select any either Mouse or Rabbit</p>
+                  <div className="multiple-input-wrapper">
+                    <button className={`btn ${productMonoclonal === 'Mouse Monoclonal' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Mouse Monoclonal')}>Mouse</button>
+                    <button className={`btn ${productMonoclonal === 'Rabbit Recombinant Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rabbit Recombinant Monoclonal​')}>Rabbit​</button>
+                  </div>
+                </div>
+                <div className="reference-wrapper">
+                  <p>Select one clonality</p>
+                  <div className="multiple-input-wrapper">
+                    <button className={`btn ${productMonoclonal === 'Mouse Monoclonal' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Mouse Monoclonal')}>Monoclonal</button>
+                    <button className={`btn ${productMonoclonal === 'Rabbit Recombinant Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rabbit Recombinant Monoclonal​')}>PolyClonal</button>
+                    <button className={`btn ${productMonoclonal === 'Rabbit Recombinant Monoclonal​' ? 'active-btn' : ''}`} onClick={(e) => setProductMonoclonal('Rabbit Recombinant Monoclonal​')}>Recombinant mAb</button>
+                  </div>
+                </div>
+                {productMonoclonal && <div className="reference-wrapper">
+                  <p>Select any one of these options (displays on <span style={{fontWeight:600}}>coA only</span>)</p>
+                  <div className="multiple-input-wrapper">
+                    <button className={`btn ${monoclonal === 'IgG1' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG1')}>IgG1</button>
+                    <button className={`btn ${monoclonal === 'IgG2a' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2a')}>IgG2a</button>
+                    <button className={`btn ${monoclonal === 'IgG2b' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2b')}>IgG2b</button>
+                    <button className={`btn ${monoclonal === 'IgG2c' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG2c')}>IgG2c</button>
+                    <button className={`btn ${monoclonal === 'IgG3' ? 'active-btn' : ''}`} onClick={(e) => setMonoclonal('IgG3')}>IgG3</button>
+                  </div>
+                </div>
+                }
+              </div>
+            }
+            {productType === 'SA - Secondary Antibody' &&
+              <div className="second-container">
+                <div className="reference-wrapper" style={{ padding: '35px 0' }}>
+                  <p>Host</p>
+                  <div className="multiple-input-wrapper">
+                    <button className={`btn`}>Goat</button>
+                    <button className={`btn`} >Donkey​</button>
+                  </div>
                 </div>
               </div>
-            </div>
-}
-{productType === 'SA - Secondary Antibody' && 
-<div className="second-container">
-              <div className="reference-wrapper" style={{padding:'35px 0'}}>
-                <p>Select any one option from above</p>
-                <div className="multiple-input-wrapper">
-                <button className={`btn`}>Anti-Mouse</button>
-                  <button className={`btn`} >Anti-Rabbit​</button>
-                  <button className={`btn`} >Anti-Human​</button>
-                  <button className={`btn`} >Anti-Rat​</button>
+            }
+            {productType === 'SA - Secondary Antibody' &&
+              <div className="second-container">
+                <div className="reference-wrapper" style={{ padding: '35px 0' }}>
+                  <p>Species Reactivity</p>
+                  <div className="multiple-input-wrapper">
+                    <button className={`btn`}>Anti-Mouse</button>
+                    <button className={`btn`} >Anti-Rabbit​</button>
+                    <button className={`btn`} >Anti-Human​</button>
+                    <button className={`btn`} >Anti-Rat​</button>
+                  </div>
                 </div>
               </div>
-            </div>
-}
+            }
           </div>
-        {productType !== 'PA - Primary Antibody' &&  <div className="reference-wrapper" style={{padding:'0 44px'}}>
-                <h4>Dyes </h4>
-                <p>Select Dyes</p>
-                <div className="multiple-input-wrapper">
-                  <button className='btn'>Alexa 405</button>
-                  <button className='btn'>Alexa 488</button>
-                  <button className='btn'>Alexa 532</button>
-                  <button className='btn'>Alexa 555</button>
-                  <button className='btn'>Alexa 594</button>
-                  <button className='btn'>Alexa 647</button>
-                  <button className='btn'>Alexa 680</button>
-                  <button className='btn'>Alexa 750</button>
-                  <button className='btn'>Alexa 430</button>
-                  <button className='btn'>Alexa 546</button>
-                  <button className='btn'>Alexa 532</button>
-                  <button className='btn'>Alexa 568</button>
-                  <button className='btn'>Alexa 610</button>
-                  <button className='btn'>Alexa 633</button>
-                  <button className='btn'>Alexa 635</button>
-                  <button className='btn'>Alexa 660</button>
-                  <button className='btn'>Alexa 700</button>
-                  <button className='btn'>Alexa 790</button>
-                </div>
+          {productType !== 'PA - Primary Antibody' && <div className="reference-wrapper" style={{ padding: '0 44px' }}>
+            <h4>Dyes </h4>
+            <p>Select Dyes</p>
+            <div className="multiple-input-wrapper">
+              <button className='btn'>Alexa 405</button>
+              <button className='btn'>Alexa 488</button>
+              <button className='btn'>Alexa 532</button>
+              <button className='btn'>Alexa 555</button>
+              <button className='btn'>Alexa 594</button>
+              <button className='btn'>Alexa 647</button>
+              <button className='btn'>Alexa 680</button>
+              <button className='btn'>Alexa 750</button>
+              <button className='btn'>Alexa 430</button>
+              <button className='btn'>Alexa 546</button>
+              <button className='btn'>Alexa 532</button>
+              <button className='btn'>Alexa 568</button>
+              <button className='btn'>Alexa 610</button>
+              <button className='btn'>Alexa 633</button>
+              <button className='btn'>Alexa 635</button>
+              <button className='btn'>Alexa 660</button>
+              <button className='btn'>Alexa 700</button>
+              <button className='btn'>Alexa 790</button>
+            </div>
+          </div>
+          }
+          {productType === 'SA - Secondary Antibody' &&
+            <div className="reference-wrapper" style={{ padding: '35px 44px' }}>
+              <h4>Fragment and Chain Specificity​</h4>
+              <p>Select as many as apply</p>
+              <div className="multiple-input-wrapper">
+                <button className={`btn`}>IgG</button>
+                <button className={`btn`} >(H + L)​</button>
+                <button className={`btn`} >F(ab)2​</button>
+                <button className={`btn`} >(Subclasses 1+2a+2b+3), Fcy Fragment Specific​</button>
               </div>
-}
+            </div>
+          }
         </ProductInformation>
         {/* dye characterstics */}
-     {productType !== 'PA - Primary Antibody' &&   <DyeInformation>
+        {productType !== 'PA - Primary Antibody' && <DyeInformation>
           <div className="header">
             <h4>Dye Characteristics</h4>
           </div>
-          <div className="content" style={{gridTemplateColumns:'1fr 1fr 1fr'}}>
-          <div className="first-container">
+          <div className="content" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+            <div className="first-container">
               <div className="reference-wrapper">
                 <h4>Excitation Wavelength​​<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Excitation Wavelength</p>
                 <div className="single-input-wrapper">
-                 <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
               <div className="reference-wrapper">
                 <h4>Molecular Weight​​<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Molecular Weight</p>
                 <div className="single-input-wrapper">
-                 <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
@@ -256,14 +273,14 @@ const Index = ({setOpenAddProduct, type}) => {
                 <h4>Emission Wavelength<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Emission Wavelength</p>
                 <div className="single-input-wrapper">
-                <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
               <div className="reference-wrapper">
                 <h4>Emission Color<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Emission Color</p>
                 <div className="single-input-wrapper">
-                 <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
@@ -272,13 +289,13 @@ const Index = ({setOpenAddProduct, type}) => {
                 <h4>Extinction Coefficient<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Extinction Coefficient</p>
                 <div className="single-input-wrapper">
-                <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
           </div>
-          </DyeInformation>
-}
+        </DyeInformation>
+        }
         {/* product formulation */}
         <ProductFormulation>
           <div className="header">
@@ -305,8 +322,8 @@ const Index = ({setOpenAddProduct, type}) => {
                 <div className="reference-input-wrapper">
                   <button className='btn'>10</button>
                   <button className='btn'>20</button>
-                  <button className='btn'>30</button>
-                  <button className='btn'>40</button>
+                  <button className='btn'>50</button>
+                  <button className='btn'>100</button>
                 </div>
               </div>
             </div>
@@ -363,13 +380,13 @@ const Index = ({setOpenAddProduct, type}) => {
               </div>
             </div>
           </div>
-          <div className="content" style={{gridTemplateColumns:'1fr 1fr 1fr', marginTop:'30px'}}>
-          <div className="first-container">
+          <div className="content" style={{ gridTemplateColumns: '1fr 1fr 1fr', marginTop: '30px' }}>
+            <div className="first-container">
               <div className="reference-wrapper">
                 <h4>Concentration(mg/mL)​​<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Concentration</p>
                 <div className="single-input-wrapper">
-                 <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
@@ -378,7 +395,7 @@ const Index = ({setOpenAddProduct, type}) => {
                 <h4>Effective Dillusional Microscopy<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Dillusion Microscopy</p>
                 <div className="single-input-wrapper">
-                <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
@@ -387,7 +404,7 @@ const Index = ({setOpenAddProduct, type}) => {
                 <h4>Western Bloating<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Enter Western Bloating</p>
                 <div className="single-input-wrapper">
-                <Input type="text" placeholder='Type Here'/>
+                  <Input type="text" placeholder='Type Here' />
                 </div>
               </div>
             </div>
@@ -400,8 +417,8 @@ const Index = ({setOpenAddProduct, type}) => {
           </div>
           <div className="content">
             <div className="first-container">
-            <div className="reference-wrapper">
-            <h4>Protein Application<span style={{ color: '#DC1E00' }}>*</span></h4>
+              <div className="reference-wrapper">
+                <h4>Protein Application<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Select multiple Application</p>
                 <div className="multiple-input-wrapper">
                   <button className='btn'>Multiplexed Immunoassay</button>
@@ -412,10 +429,10 @@ const Index = ({setOpenAddProduct, type}) => {
             </div>
             <div className="second-container">
               <div className="reference-wrapper">
-              <h4>Microscopy Application<span style={{ color: '#DC1E00' }}>*</span></h4>
+                <h4>Microscopy Application<span style={{ color: '#DC1E00' }}>*</span></h4>
                 <p>Select Microscopy Application</p>
                 <div className="multiple-input-wrapper">
-                <button className='btn'>Widefield</button>
+                  <button className='btn'>Widefield</button>
                   <button className='btn'>Widefield SIM</button>
                   <button className='btn'>Confocal</button>
                   <button className='btn'>Super Resolution Airyscan</button>
@@ -434,186 +451,186 @@ const Index = ({setOpenAddProduct, type}) => {
             <h4>Upload Images and Methods</h4>
           </div>
           <div className="content">
-              <div className="image-card">
-                <h4>Western Blot</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Western Blot</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+            <div className="image-card">
+              <h4>Western Blot</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Western Blot</p>
               </div>
-              <div className="image-card">
-                <h4>Multiplexed Protein Expression and Host Cell Protein​</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Multiplexed Protein Expression and Host Cell Protein​</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
               </div>
-              <div className="image-card">
-                <h4>Widefield</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Widefield</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
               </div>
-              <div className="image-card">
-                <h4>Widefield SIM</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Widefield SIM</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+            </div>
+            <div className="image-card">
+              <h4>Multiplexed Protein Expression and Host Cell Protein​</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Multiplexed Protein Expression and Host Cell Protein​</p>
               </div>
-              <div className="image-card">
-                <h4>Confocal</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Confocal</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
               </div>
-              <div className="image-card">
-                <h4>Super Resolution – ​ Airyscan​</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Super Resolution – ​ Airyscan​</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
               </div>
-              <div className="image-card">
-                <h4>Super Resolution – ​ SIM​</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Super Resolution – ​ SIM​</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+            </div>
+            <div className="image-card">
+              <h4>Widefield</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Widefield</p>
               </div>
-              <div className="image-card">
-                <h4>Super Resolution – ​SIM²</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Super Resolution – ​SIM²</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
               </div>
-              <div className="image-card">
-                <h4>Super Resolution – ​ PALM​</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Super Resolution – ​ PALM​</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
               </div>
-              <div className="image-card">
-                <h4>Super Resolution – ​Single Molecule​ STORM​</h4>
-                <div className="img-container">
-                  <input type="file" className='image-file' accept="image/*" />
-                  <i class="far fa-upload"></i>
-                  <p>Super Resolution – ​Single Molecule​ STORM​</p>
-                </div>
-                <div className="method-header">
-                  <p>Method</p>
-                  <p>500 characters limit</p>
-                </div>
-                <div className="single-input-wrapper">
-                  <textarea
-                    style={{ resize: "none", borderRadius: "8px" }}
-                    placeholder='Type Here...'
-                  ></textarea>
-                </div>
+            </div>
+            <div className="image-card">
+              <h4>Widefield SIM</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Widefield SIM</p>
               </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Confocal</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Confocal</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Super Resolution – ​ Airyscan​</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Super Resolution – ​ Airyscan​</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Super Resolution – ​ SIM​</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Super Resolution – ​ SIM​</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Super Resolution – ​SIM²</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Super Resolution – ​SIM²</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Super Resolution – ​ PALM​</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Super Resolution – ​ PALM​</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
+            <div className="image-card">
+              <h4>Super Resolution – ​Single Molecule​ STORM​</h4>
+              <div className="img-container">
+                <input type="file" className='image-file' accept="image/*" />
+                <i class="far fa-upload"></i>
+                <p>Super Resolution – ​Single Molecule​ STORM​</p>
+              </div>
+              <div className="method-header">
+                <p>Method</p>
+                <p>500 characters limit</p>
+              </div>
+              <div className="single-input-wrapper">
+                <textarea
+                  style={{ resize: "none", borderRadius: "8px" }}
+                  placeholder='Type Here...'
+                ></textarea>
+              </div>
+            </div>
           </div>
         </ImageInformation>
         {/* price */}
@@ -622,11 +639,11 @@ const Index = ({setOpenAddProduct, type}) => {
             <h4>Price</h4>
           </div>
           <div className="content">
-            <div className="reference-wrapper" style={{width: '100%'}}>
-                <div className="multiple-input-wrapper">
-                 {Array(40).fill(49).map((value, index) => <button className='btn' key={index}>{value + (index * 50)}</button>)}
-                </div>
+            <div className="reference-wrapper" style={{ width: '100%' }}>
+              <div className="multiple-input-wrapper">
+                {Array(40).fill(49).map((value, index) => <button className='btn' key={index}>{value + (index * 50)}</button>)}
               </div>
+            </div>
           </div>
         </PriceInformation>
       </ContentWrapper>
