@@ -88,7 +88,7 @@ if(deleteModal){
             </div>
           <textarea cols={30} rows={10}
             style={{ resize: "none", borderRadius: "8px" }}
-            placeholder='Write Here...'
+            placeholder='Type Here...'
             defaultValue={selectedMember?.description}
           ></textarea>
           </div>
