@@ -544,6 +544,13 @@ background:#FCFCFC;
         color:#6C6A73;
         font-weight: 400;
     }
+
+.left-container,.right-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 }
 
 }

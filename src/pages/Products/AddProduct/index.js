@@ -202,7 +202,7 @@ const Index = ({ setOpenAddProduct, type }) => {
                     <button className={`btn`}>Anti-Mouse</button>
                     <button className={`btn`} >Anti-Rabbit​</button>
                     <button className={`btn`} >Anti-Human​</button>
-                    <button className={`btn`} >Anti-Rat​</button>
+                    {/* <button className={`btn`} >Anti-Rat​</button> */}
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ const Index = ({ setOpenAddProduct, type }) => {
           </div>
           {productType !== 'PA - Primary Antibody' && <div className="reference-wrapper" style={{ padding: '0 44px' }}>
             <h4>Dyes </h4>
-            <p>Select Dyes</p>
+            <p>Select One Dye</p>
             <div className="multiple-input-wrapper">
               <button className='btn'>Alexa 405</button>
               <button className='btn'>Alexa 488</button>
@@ -419,7 +419,7 @@ const Index = ({ setOpenAddProduct, type }) => {
             <div className="first-container">
               <div className="reference-wrapper">
                 <h4>Protein Application<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Select multiple Application</p>
+                <p>Select those that you have data for</p>
                 <div className="multiple-input-wrapper">
                   <button className='btn'>Multiplexed Immunoassay</button>
                   <button className='btn'>Western Blotting</button>
@@ -430,7 +430,7 @@ const Index = ({ setOpenAddProduct, type }) => {
             <div className="second-container">
               <div className="reference-wrapper">
                 <h4>Microscopy Application<span style={{ color: '#DC1E00' }}>*</span></h4>
-                <p>Select Microscopy Application</p>
+                <p>Select those that you have data for</p>
                 <div className="multiple-input-wrapper">
                   <button className='btn'>Widefield</button>
                   <button className='btn'>Widefield SIM</button>

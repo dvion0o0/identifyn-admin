@@ -121,7 +121,7 @@ const Index = () => {
      <table className={"mainTable"}>
           <thead>
             <tr>
-              <th>Cat # </th>
+              <th>Cat ID# </th>
               <th>Product Name <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
               <th>Application <i className='fas fa-chevron-down' style={{fontSize:'11px', color:'#6c6a73'}}></i></th>
               <th>Price</th>

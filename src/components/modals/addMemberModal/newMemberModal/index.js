@@ -82,7 +82,10 @@ if(deleteModal){
             </div>
           </div>
           <div className="input-container">
+            <div className="two-column" style={{display:'flex', justifyContent:'space-between'}}>
           <label htmlFor="position2">Bio <span>*</span></label>
+          <label>2500 character limit</label>
+            </div>
           <textarea cols={30} rows={10}
             style={{ resize: "none", borderRadius: "8px" }}
             placeholder='Write Here...'
@@ -100,7 +103,7 @@ if(deleteModal){
             })
           }else{
             setNotification({
-              message: "New Member Succesfully Added",
+              message: "New Member Successfully Added",
               type: "add"
             })
             const newMember = {

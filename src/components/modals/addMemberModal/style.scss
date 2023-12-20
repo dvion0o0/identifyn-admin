@@ -129,6 +129,13 @@
             border: 1px solid #F1EEFC;
             opacity: 0.6;           
             background: #FCFCFC;  
+
+            &:hover{
+            background-color: #F8F7FE;
+            color: var(--primary-color);
+            opacity: 1;
+            border: 1px solid var(--primary-color);
+            }
         }
     
         .tab-active{
